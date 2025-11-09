@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic-Tac-Toe — Animated</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app" role="application" aria-label="Tic Tac Toe game">
+    <header>
+      <div>
+        <h1>Tic-Tac-Toe</h1>
+        <div class="sub"> Play vs computer </div>
+      </div>
+
+      <div class="controls" aria-hidden="false">
+        <label>
+          Mode
+          <select id="mode" title="Select game mode">
+            <option value="pvp">Two players</option>
+            <option value="pvc">Play vs Computer</option>
+          </select>
+        </label>
+
+        <label id="firstLabel">
+          You are
+          <select id="playerSymbol">
+            <option value="X">X (goes first)</option>
+            <option value="O">O</option>
+          </select>
+        </label>
+
+        <button id="restart" title="Restart game">Restart</button>
+      </div>
+    </header>
+
+    <div class="board-wrap">
+      <div class="board-card" aria-hidden="false">
+        <!-- board -->
+        <div class="board" id="board" role="grid" aria-label="tic tac toe board"></div>
+
+        <!-- animated winning line overlay -->
+        <svg class="win-line-svg" id="winSvg" width="100%" height="100%" viewBox="0 0 360 360" preserveAspectRatio="none">
+          <line id="winLine" class="win-line" x1="0" y1="0" x2="0" y2="0"></line>
+        </svg>
+
+        <canvas id="confetti"></canvas>
+      </div>
+
+      <aside class="info" aria-hidden="false">
+        <div class="score" id="scoreboard">
+          <div class="row"><div>Player X</div><div id="scoreX" class="big">0</div></div>
+          <div class="row"><div>Player O</div><div id="scoreO" class="big">0</div></div>
+          <div class="row"><div>Draws</div><div id="scoreT" class="big">0</div></div>
+        </div>
+
+        <div class="status" id="status">Choose mode and start playing — click a cell to place.</div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
